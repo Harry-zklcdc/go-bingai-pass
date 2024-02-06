@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  go-bingai-bypass:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    environment:
+      - PASS_TIMEOUT=8
