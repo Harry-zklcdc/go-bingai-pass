@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  go-bingai-bypass:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 7860:7860
+    environment:
+      - PASS_TIMEOUT=8
