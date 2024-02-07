@@ -31,9 +31,6 @@ RUN curl -L https://github.com/Harry-zklcdc/go-bingai-pass/releases/latest/downl
     tar -zxvf go-bingai-pass-linux-amd64.tar.gz && \
     chmod +x go-bingai-pass
 
-RUN curl -L https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o cloudflared && \
-    chmod +x cloudflared
-
 RUN apt-get remove -y curl && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
