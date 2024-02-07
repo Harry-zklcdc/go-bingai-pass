@@ -1,0 +1,1 @@
+FROM zklcdc/go-bingai-pass:latest
