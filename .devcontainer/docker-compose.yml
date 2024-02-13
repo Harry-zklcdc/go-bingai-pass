@@ -1,8 +1,9 @@
 services:
-  go-proxy-bingai:
+  go-bingai-pass:
     build: 
       context: .
       dockerfile: Dockerfile
+      no_cache: true
     environment:
       - HEADLESS=false
       - PASS_TIMEOUT=5
