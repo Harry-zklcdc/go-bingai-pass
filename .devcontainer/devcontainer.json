@@ -1,4 +1,6 @@
 {
-  "dockerComposeFile": "docker-compose.yml",
-  "service": "go-bingai-pass",
+  "name": "Go Proxy BingAI ByPass",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  }
 }

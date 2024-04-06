@@ -9,3 +9,5 @@ RUN wget https://github.com/Harry-zklcdc/go-bingai-pass/releases/latest/download
     chmod +x go-bingai-pass
 
 RUN rm go-bingai-pass-linux-amd64.tar.gz go-proxy-bingai-linux-amd64.tar.gz
+
+COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
