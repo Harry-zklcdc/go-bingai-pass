@@ -31,8 +31,7 @@ RUN curl -L https://github.com/Harry-zklcdc/go-bingai-pass/releases/latest/downl
     tar -zxvf go-bingai-pass-linux-amd64.tar.gz && \
     chmod +x go-bingai-pass
 
-RUN apt-get remove -y curl && \
-    apt-get clean && \
+RUN apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm go-bingai-pass-linux-amd64.tar.gz
 
