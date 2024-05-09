@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-ENV GBP_USER ${GBP_USER:-gbp}
+ENV GBP_USER ${GBP_USER:-ubuntu}
 ENV GBP_USER_ID ${GBP_USER_ID:-1000}
 
 WORKDIR /app
@@ -38,8 +38,8 @@ RUN apt-get clean && \
 COPY start-xvfb.sh /opt/bin/start-xvfb.sh
 COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 
-RUN groupadd -g $GBP_USER_ID $GBP_USER
-RUN useradd -rm -G sudo -u $GBP_USER_ID -g $GBP_USER_ID $GBP_USER
+# RUN groupadd -g $GBP_USER_ID $GBP_USER
+# RUN useradd -rm -G sudo -u $GBP_USER_ID -g $GBP_USER_ID $GBP_USER
 
 RUN mkdir -p /tmp/edge /var/run/supervisor /var/log/supervisor
 RUN chown "${GBP_USER_ID}:${GBP_USER_ID}" /var/run/supervisor /var/log/supervisor
