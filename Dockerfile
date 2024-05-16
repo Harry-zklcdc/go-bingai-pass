@@ -23,7 +23,9 @@ RUN apt-get install -y --no-install-recommends fluxbox eterm hsetroot feh
 RUN wget -q -O - https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/microsoft.gpg >/dev/null \
     && echo "deb https://packages.microsoft.com/repos/edge stable main" >> /etc/apt/sources.list.d/microsoft-edge.list \
     && apt-get update -qqy \
-    && apt-get -qqy --no-install-recommends install microsoft-edge-stable
+    && wget https://packages.microsoft.com/repos/edge/pool/main/m/microsoft-edge-stable/microsoft-edge-stable_116.0.1938.81-1_amd64.deb -O /tmp/microsoft-edge-stable_amd64.deb \
+    && apt-get install -qqy --no-install-recommends /tmp/microsoft-edge-stable_amd64.deb \
+    && rm /tmp/microsoft-edge-stable_amd64.deb
 COPY wrap_edge_binary /opt/bin/wrap_edge_binary
 RUN /opt/bin/wrap_edge_binary
 
