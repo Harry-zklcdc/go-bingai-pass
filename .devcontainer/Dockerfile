@@ -1,15 +1,17 @@
-FROM zklcdc/go-bingai-pass:latest
+FROM ubuntu:latest
 
-RUN wget https://github.com/Harry-zklcdc/go-proxy-bingai/releases/latest/download/go-proxy-bingai-linux-amd64.tar.gz -O go-proxy-bingai-linux-amd64.tar.gz && \
-    tar -zxvf go-proxy-bingai-linux-amd64.tar.gz && \
-    chmod +x go-proxy-bingai
+WORKDIR /app
 
-RUN wget https://github.com/Harry-zklcdc/go-bingai-pass/releases/latest/download/go-bingai-pass-linux-amd64.tar.gz -O go-bingai-pass-linux-amd64.tar.gz && \
-    tar -zxvf go-bingai-pass-linux-amd64.tar.gz && \
-    chmod +x go-bingai-pass
+RUN apt-get update && apt-get install -y curl && \
+    curl -L https://github.com/Harry-zklcdc/go-bingai-pass/releases/latest/download/go-bingai-pass-linux-amd64.tar.gz -o go-bingai-pass-linux.tar.gz && \
+    tar -zxvf go-bingai-pass-linux.tar.gz && \
+    chmod +x go-bingai-pass && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    rm go-bingai-pass-linux.tar.gz
 
-RUN rm go-bingai-pass-linux-amd64.tar.gz go-proxy-bingai-linux-amd64.tar.gz
+ENV PORT=7860
 
-COPY supervisor.conf /etc/supervisor/conf.d/supervisor.conf
+EXPOSE 7860
 
-CMD [ "/usr/bin/bash", "-c", "while true;do sleep 3600;done" ]
+CMD /app/go-bingai-pass

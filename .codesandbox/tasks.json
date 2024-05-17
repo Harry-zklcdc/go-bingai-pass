@@ -5,8 +5,8 @@
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
     "supervisor": {
-      "name": "supervisor",
-      "command": "/usr/bin/supervisord -c /etc/supervisor/conf.d/supervisor.conf",
+      "name": "bingai-bypass",
+      "command": "/app/go-bingai-pass",
       "runAtStart": true
     }
   }
