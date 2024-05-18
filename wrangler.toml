@@ -1,0 +1,10 @@
+name = "go-bingai-pass"
+main = "cloudflare/worker.js"
+compatibility_date = "2024-04-29"
+workers_dev = true
+rules = [
+  { type = "ESModule", globs = ["**/*.js"], fallthrough = true }
+]
+
+[placement]
+mode = "smart"

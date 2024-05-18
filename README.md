@@ -1,5 +1,11 @@
 # Go BingAI Pass
 
+## 一键部署
+
+> ### Cloudflare Worker 部署
+>
+> [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/Harry-zklcdc/go-bingai-pass)
+
 ## 环境变量
 
 - `PORT`：API端口号，默认为 `80`
