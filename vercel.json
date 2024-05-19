@@ -1,0 +1,25 @@
+{
+  "name": "go-bingai-pass",
+  "version": 2,
+  "buildCommand": "curl -L https://github.com/Harry-zklcdc/go-bingai-pass/releases/latest/download/go-bingai-pass.wasm -o api/go-bingai-pass.wasm",
+  "outputDirectory": "api",
+  "functions": {
+    "api/*.js": {
+      "memory": 512,
+      "includeFiles": "*.wasm"
+    }
+  },
+  "routes": [
+    {
+      "src": "/gettoken",
+      "dest": "/api/getToken.js"
+    },
+    {
+      "src": "/.*",
+      "dest": "/api/fxxkCF.js"
+    }
+  ],
+  "github": {
+    "silent": true
+  }
+}
