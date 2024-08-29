@@ -9,7 +9,7 @@ WORKDIR /app
 
 USER root
 
-RUN apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
+RUN apt-get update && apt-get install -y --no-install-recommends curl wget ca-certificates
 
 RUN curl -L https://github.com/Harry-zklcdc/go-bingai-pass/releases/latest/download/go-bingai-pass-linux-${TARGETARCH}.tar.gz -o go-bingai-pass-linux.tar.gz && \
     tar -zxvf go-bingai-pass-linux.tar.gz && \
